@@ -18,13 +18,16 @@ st.title("🚧 Road Damage Detection using YOLO")
 
 
 
-MODELS = {
-    "YOLO11n": "YOLO11n_best.pt",
-    "YOLO11s": "YOLO11s_best.pt",
-    "YOLO11m": "YOLO11m_best.pt",
-    "YOLO11s Tuned ": "YOLO11s_Tuned_best.pt"
-}
+import os
 
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+
+MODELS = {
+    "YOLO11n": os.path.join(BASE_DIR, "YOLO11n_best.pt"),
+    "YOLO11s": os.path.join(BASE_DIR, "YOLO11s_best.pt"),
+    "YOLO11m": os.path.join(BASE_DIR, "YOLO11m_best.pt"),
+    "YOLO11s Tuned ": os.path.join(BASE_DIR, "YOLO11s_Tuned_best.pt"),
+}
 model_name = st.sidebar.selectbox(
     "Choose Model",
     list(MODELS.keys())
